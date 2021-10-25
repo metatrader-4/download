@@ -2,7 +2,7 @@
 $server = $_SERVER['SERVER_NAME'];
 $protocol = 'http';
 if (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') {
-    $protocol = 'https';
+   $protocol = 'https';
 }
 
 $template = '<?xml version="1.0" encoding="UTF-8"?>
@@ -25,7 +25,7 @@ $files = scandir(__DIR__);
 
 foreach ($files as $file) {
     if (preg_match('#\.html#', $file)) {
-        $contentString .= "
+        $contentString .=  "
 <url>
   <loc>$protocol://$server/$file</loc>
   <lastmod>2020-03-16T07:15:20+00:00</lastmod>
