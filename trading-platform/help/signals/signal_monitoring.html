@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Account Monitoring - Signals - MetaTrader 4 Help</title>
+    <meta name="description" content="The system of trade account monitoring is a part of &quot;Signals&quot; service. A detailed report can be received on any available signal. A trade... - MetaTrader 4 Help">
+    <meta property="og:url" content="https://www.metatrader4.com/en/trading-platform/help/signals/signal_monitoring">
+    <meta property="og:title" content="Account Monitoring - Signals - MetaTrader 4 Help">
+    <meta property="og:description" content="The system of trade account monitoring is a part of &quot;Signals&quot; service. A detailed report can be received on any available signal. A trade...">
+    <meta property="og:image" content="https://www.metatrader4.com/i/metatrader-4-logo-og.png">
+    <meta property="og:type" content="article">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="x-dns-prefetch-control" content="on" />
+    <link rel="shortcut icon" href="../../../favicon.ico">
+    
+    <meta name="msapplication-config" content="none"/>
+    <link href="../../../all.dt135397bab50.css" type="text/css" rel="stylesheet" media="all">
+    
+    <!--[if lte IE 9]>
+    <style type="text/css">
+        html[lang="ja"] .header .menu>li>a{
+            letter-spacing: -1.5px;
+        }
+    </style>
+    <![endif]-->
+    
+    <link rel="canonical" href="signal_monitoring.html">
+    <link rel="alternate" hreflang="en" href="signal_monitoring.html">
+    <link rel="alternate" hreflang="es" href="https://www.metatrader4.com/es/trading-platform/help/signals/signal_monitoring">
+    <link rel="alternate" hreflang="fr" href="https://www.metatrader4.com/fr/trading-platform/help/signals/signal_monitoring">
+    <link rel="alternate" hreflang="ja" href="https://www.metatrader4.com/ja/trading-platform/help/signals/signal_monitoring">
+    <link rel="alternate" hreflang="pt" href="https://www.metatrader4.com/pt/trading-platform/help/signals/signal_monitoring">
+    <link rel="alternate" hreflang="ru" href="https://www.metatrader4.com/ru/trading-platform/help/signals/signal_monitoring">
+    <link rel="alternate" hreflang="zh" href="https://www.metatrader4.com/zh/trading-platform/help/signals/signal_monitoring">
+    
+    <script type="text/javascript">
+        var mqGlobal = {};
+        mqGlobal.AddOnLoad = function(callback) {if (!this._onload) this._onload = [];this._onload[this._onload.length] = callback;};
+        mqGlobal.AddOnReady = function (callback) { if (!this._onready) this._onready = []; this._onready[this._onready.length] = callback; };
+        //---
+        var replaceMt4DownloadLink = "https://download.mql5.com/cdn/web/metaquotes.software.corp/mt4/mt4setup.exe?utm_source=www.metatrader4.com&amp;amp;utm_campaign=download";
+        var replaceMt4DownloadLinkUtmSource = "www.metatrader4.com";
+        var replaceMt4DownloadLinkUtmCampaign = "download";
+        //---
+        
+        (function(a,e,f,g,b,c,d){a[b]||(a.FintezaCoreObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=!0,c.defer=!0,c.src=g,d&&d.parentNode&&d.parentNode.insertBefore(c,d))})
+          (window,document,"script","/fz/core.js","fz");
+        fz("register","website",{id:"qnlhlnetfifwnnfroedbtvafkmshgcbepu",trackLinks:true});
+        
+    </script>
+    
+    <script src="../../../all.dt13511722f85.js" defer="defer" type="text/javascript"></script>
+    
+  
+
+  
+
+
+</head>
+
+<body itemscope="itemscope" itemtype="https://schema.org/WebPage">
+
+
+<div class="cover ">
+    
+
+    <div class="header container ">
+        <a href="https://www.metatrader4.com/en" class="logo"><img srcset="/i/metatrader-4-logo_2x.png 2x" src="../../../metatrader-4-logo.png" width="175" height="47" title="MetaTrader 4" alt="MetaTrader 4"></a>
+
+        <ul class="menu" id="menu" itemscope itemtype="https://schema.org/SiteNavigationElement">
+        <li class="withSubMenu">
+            <a href="../../../trading-platform.html" class='selected' itemprop="url">Trading Platform</a>
+            <ul>
+                <li><a href="../../../trading-platform.html">MetaTrader 4</a></li>
+                <li><a href="../../../download.html" itemprop="url">Download</a></li>
+                <li class="splitted"><a href="../../forex.html" itemprop="url">Forex</a></li>
+                <li><a href="../../orders.html" itemprop="url">Trading and Orders</a></li>
+                <li><a href="../../technical-analysis.html" itemprop="url">Technical Analysis</a></li>
+                <li><a href="../../alerts-news.html" itemprop="url">Alerts and News</a></li>
+                <li><a href="../../vps.html" itemprop="url">Virtual Hosting (VPS)</a></li>
+                <li><a href="../../web-trading.html" itemprop="url">Web Trading</a></li>
+                <li class="splitted"><a href="../../open-demo.html" itemprop="url">Open a Demo Account</a></li>
+                <li class="splitted"><a href="../../help.html" class='selected' itemprop="url">MetaTrader 4 Help</a></li>
+                <li><a href="../../../releasenotes.html" itemprop="url">Release Notes</a></li>
+            </ul>
+        </li><!--
+
+        --><li class="withSubMenu">
+            <a href="../../../mobile-trading.html" itemprop="url">Mobile Trading</a>
+            <ul>
+                <li><a href="../../../mobile-trading.html">MetaTrader 4 Mobile Technology</a></li>
+                <li class="splitted"><a href="../../../mobile-trading/iphone-ipad.html" itemprop="url">MetaTrader 4 iPhone/iPad</a></li>
+                <li><a href="../../../mobile-trading/android.html" itemprop="url">MetaTrader 4 Android OS</a></li>
+                <li class="splitted"><a href="../../../download.html" itemprop="url">Download</a></li>
+            </ul>
+        </li><!--
+
+        --><li class="withSubMenu">
+            <a href="../../../market.html" itemprop="url">Market</a>
+            <ul>
+                <li><a href="../../../market.html">MetaTrader Market</a></li>
+                <li><a href="../../../market/robots-indicators.html" itemprop="url">How to Buy Robots and Indicators</a></li>
+            </ul>
+        </li><!--
+
+        --><li class="withSubMenu">
+            <a href="../../../signals.html" itemprop="url">Signals</a>
+            <ul>
+                <li><a href="../../../signals.html">Forex Signals and Copy Trading</a></li>
+                <li><a href="../../../signals/overview.html" itemprop="url">Find Signal</a></li>
+                <li><a href="../../../signals/subscribe.html" itemprop="url">How to Subscribe to a Signal</a></li>
+                <li><a href="../../../signals/providers.html" itemprop="url">How to Become a Signal Provider</a></li>
+            </ul>
+        </li><!--
+
+        --><li class="withSubMenu">
+            <a href="../../../automated-trading.html" itemprop="url">Automated Trading</a>
+            <ul>
+                <li><a href="../../../automated-trading.html">Expert Advisors and Indicators</a></li>
+                <li><a href="../../../automated-trading/robots-indicators.html" itemprop="url">Where to Get a Robot or Indicator</a></li>
+                <li><a href="../../../automated-trading/mql4-ide.html" itemprop="url">MQL4 IDE</a></li>
+                <li><a href="../../../automated-trading/mql4-programming.html" itemprop="url">MQL4 Programming</a></li>
+                <li><a href="../../../automated-trading/metaeditor.html" itemprop="url">MetaEditor</a></li>
+                <li><a href="../../../automated-trading/strategy-tester.html" itemprop="url">Strategy Tester</a></li>
+                <li class="splitted"><a href="https://www.mql4.com/en" target="_blank">MQL4.community</a></li>
+            </ul>
+        </li><!--
+
+        --><li class="singled">
+               <a href="../../../download.html" itemprop="url">Download</a>
+           </li><!--
+
+        --><li class="withSubMenu">
+            <a href="../../../brokers.html" itemprop="url">For Brokers</a>
+            <ul class="right">
+                <li><a href="../../../brokers.html">MetaTrader 4 for Brokers</a></li>
+                <li><a href="../../../brokers/api.html" itemprop="url">MetaTrader 4 API</a></li>
+                <li><a href="../../../brokers/integration-plugins-feeds.html" itemprop="url">Integration, Plugins and Feeds</a></li>
+            </ul>
+        </li><!--
+
+        --><li class="withSubMenu">
+            <a href="../../../company.html" itemprop="url">Company</a>
+            <ul class="right">
+                <li><a href="../../../company.html">MetaQuotes Ltd</a></li>
+                <li><a href="../../../company/contacts.html" itemprop="url">Contacts</a></li>
+            </ul>
+        </li>
+            
+        </ul>
+
+        <div class="sidebarToggleButton" id="sidebarToggleButton" onclick="Sidebar.Toggle();"><div></div></div>
+
+        <ul class="langmenu" id="langmenu" onmousedown="LangMenu.Show(event);">
+        <li class='selected'><a href='signal_monitoring.html'>English <abbr>EN</abbr></a></li><li><a href='https://www.metatrader4.com/es/trading-platform/help/signals/signal_monitoring'>Español <abbr>ES</abbr></a></li><li><a href='https://www.metatrader4.com/fr/trading-platform/help/signals/signal_monitoring'>Français <abbr>FR</abbr></a></li><li><a href='https://www.metatrader4.com/ja/trading-platform/help/signals/signal_monitoring'>日本語 <abbr>JA</abbr></a></li><li><a href='https://www.metatrader4.com/pt/trading-platform/help/signals/signal_monitoring'>Português <abbr>PT</abbr></a></li><li><a href='https://www.metatrader4.com/ru/trading-platform/help/signals/signal_monitoring'>Русский <abbr>RU</abbr></a></li><li><a href='https://www.metatrader4.com/zh/trading-platform/help/signals/signal_monitoring'>中文 <abbr>ZH</abbr></a></li>
+        </ul>
+    </div>
+
+    
+
+    
+
+
+
+<div class="line top"></div>
+
+<div class="helpContainer container">
+
+    <div class="topTitle">MetaTrader&nbsp;4 Help</div>
+
+    <div class="helpBreadCrumbs">
+        
+  <span><a href="../../help.html" class='boldenPath'>MetaTrader 4 Help</a></span> &rarr; 
+  <span><a href="../beginning/signals.html" class='boldenPath'>Signals</a></span> &rarr; 
+  <span><span class="boldenPath">Account Monitoring</span></span>
+
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": 
+[
+ {"@type": "ListItem", "position": 1, "item": {"@id": "/en/trading-platform/help", "name": "MetaTrader 4 Help"}},
+ {"@type": "ListItem", "position": 2, "item": {"@id": "/en/trading-platform/help/beginning/signals", "name": "Signals"}},
+ {"@type": "ListItem", "position": 3, "item": {"@id": "/en/trading-platform/help/signals/signal_monitoring", "name": "Account Monitoring"}}
+]}
+</script>
+
+    </div>
+
+    <div class="helpMenu">
+        
+<ul class="docsMenu">
+  <li><a href="signal_provider.html">Signal Providers</a></li>
+  <li><a href="signal_subscriber.html">Signal Subscribers</a></li>
+  <li><span class="boldenPath">Account Monitoring</span></li>
+</ul>
+
+        <div style="clear: both"></div>
+    </div>
+
+    <div class="helpContent" >
+
+        <div>
+            <div id="help">
+<H1>Account Monitoring</H1>
+<p class="p_txt"><span class="f_txt">The system of trade account monitoring is a part of &quot;Signals&quot; service. A detailed report can be received on any available signal.</span></p>
+<p class="p_txt"><span class="f_txt">A trade account can be monitored both via MQL5.community website and directly via the client terminal. Move to <a href="https://www.mql5.com/en/signals" target="_blank" class="weblink" title="MQL5.community Signals">&quot;Signals&quot; section</a> on the website and select any signal to view its parameters:</span></p>
+<p class="p_Image"><img class="help"  alt="Account monitoring" title="Account monitoring" width="728" height="426" style="margin:0 auto 0 auto;width:728px;height:426px;border:none" src="../../../help/trading-platform/en/signal_monitor.png"/></p>
+<p class="p_txt"><span class="f_txt">If you want to find data on a signal via the client terminal, open it in Signals tab of the <a href="../overview/terminal/toolbox_signals.html" class="topiclink">Terminal</a> window.</span></p>
+<div style="text-align: justify; text-indent: 0; padding: 0 0 0 0; margin: 12px 17px 0 17px;"><table class="attentable" cellpadding="8" border="1" style="background-color:#f6f8fd;">
+<tr class="attentable">
+<td class="attentable" style="width:142px;"><p class="p_fortable"><a href="https://www.youtube.com/watch?v=c4E1YpjKwKo&amp;list=PLltlMLQ7OLeLZpxDnCMKz1tBlPcUminCT&amp;index=5" target="_blank" title="Watch video: Visualize a signal on a chart "><img class="help"  alt="Watch video: Visualize a signal on a chart " title="Watch video: Visualize a signal on a chart " width="142" height="80" style="margin:0;width:142px;height:80px;border:none" src="../../../help/trading-platform/en/video_signals_chart.png"/></a></p>
+</td>
+<td class="attentable"><p class="p_fortable"><span class="f_fortable" style="font-weight: bold;">Watch video: Visualize a signal on a chart</span></p>
+<p class="p_fortable"><span class="f_fortable">The effectiveness of the entry points and the unrealized profit can be easily assessed with the visualized chart of provider&#39;s deals.</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_Image"><img class="help"  alt="Signal monitoring" title="Signal monitoring" width="750" height="566" style="margin:0 auto 0 auto;width:750px;height:566px;border:none" src="../../../help/trading-platform/en/toolbox_signals_view.png"/></p>
+<p class="p_txt"><span class="f_txt">Data on a trading account is divided into several blocks.</span></p>
+<H2>Basic Data</H2>
+<p class="p_txt"><span class="f_txt">Basic data is located on the left side of the page.</span></p>
+<ul style="list-style-type:disc">
+<li class="p_ol"><span class="f_ol" style="font-weight: bold;">Growth</span><span class="f_ol"> &#150; growth of the deposit in percentage terms calculated on the basis of trade operation only without taking into the account the deposits and withdrawals.</span></li><li class="p_ol"><span class="f_ol" style="font-weight: bold;">Initial Deposit</span><span class="f_ol"> &#150; amount of money deposited to the account when opening it.</span></li><li class="p_ol"><span class="f_ol" style="font-weight: bold;">Deposits</span><span class="f_ol"> &#150; funds deposited on the account during its life time. This parameter should always be considered when evaluating the signal&#39;s profitability. The balance curve may be supported by regularly deposited funds.</span></li><li class="p_ol"><span class="f_ol" style="font-weight: bold;">Withdrawals</span><span class="f_ol"> &#150; funds withdrawn from the account during its life time.</span></li><li class="p_ol"><span class="f_ol" style="font-weight: bold;">Balance</span><span class="f_ol"> &#150; money on the account, not accounting the floating profit of currently open orders.</span></li><li class="p_ol"><span class="f_ol" style="font-weight: bold;">Equity</span><span class="f_ol"> &#150; deposit funds accounting for the results of the currently open positions (floating profit/loss).</span></li><li class="p_ol"><span class="f_ol" style="font-weight: bold;">Profit</span><span class="f_ol"> &#150; profit/loss gained during the life time of the account.</span></li></ul>
+<ul style="list-style-type:disc">
+<li class="p_ol"><span class="f_ol" style="font-weight: bold;">Subscribers</span><span class="f_ol"> &#150; current amount of the signal subscribers.</span></li><li class="p_ol"><span class="f_ol" style="font-weight: bold;">Subscribers&#39; funds</span><span class="f_ol"> &#150; total funds used by the signal subscribers (deposit load selected in the copying settings is considered). Only funds on real accounts are considered.</span></li></ul>
+<ul style="list-style-type:disc">
+<li class="p_ol"><span class="f_ol" style="font-weight: bold;">Max drawdown</span><span class="f_ol"> &#150; maximal balance drop relative to the local maximum in deposit currency.</span></li></ul>
+<ul style="list-style-type:disc">
+<li class="p_ol"><span class="f_ol" style="font-weight: bold;">Weeks</span><span class="f_ol"> &#150; number of weeks that have passed since the first trade on the trading account was performed (the entire account lifetime instead of the period since its registration as a signal is considered).</span></li></ul>
+<ul style="list-style-type:disc">
+<li class="p_ol"><span class="f_ol" style="font-weight: bold;">Last trade</span><span class="f_ol"> &#150; amount of time passed since the last trade operation on the account of the signal provider.</span></li></ul>
+<ul style="list-style-type:disc">
+<li class="p_ol"><span class="f_ol" style="font-weight: bold;">Trades per week</span><span class="f_ol"> &#150; average number of trades per week.</span></li></ul>
+<ul style="list-style-type:disc">
+<li class="p_ol"><span class="f_ol" style="font-weight: bold;">Avg holding time</span><span class="f_ol"> &#150; average time of holding an open position.</span></li></ul>
+<ul style="list-style-type:disc">
+<li class="p_ol"><span class="f_ol" style="font-weight: bold;">Broker</span><span class="f_ol"> &#150; name of a broker server where the account is registered.</span></li><li class="p_ol"><span class="f_ol" style="font-weight: bold;">Leverage</span><span class="f_ol"> &#150; leverage value.</span></li><li class="p_ol"><span class="f_ol" style="font-weight: bold;">Type</span><span class="f_ol"> &#150; trading type: Demo, Contest (for example, the account for participation in the Automated Trading Championship) or Real. Please note that demo accounts allow traders to afford the risks that may be unacceptable for real accounts.</span></li><li class="p_ol"><span class="f_ol" style="font-weight: bold;">Author</span><span class="f_ol"> &#150; author (MQL5.community account) name.</span></li></ul>
+<ul style="list-style-type:disc">
+<li class="p_ol"><span class="f_ol" style="font-weight: bold;">Expected slippage</span><span class="f_ol"> &#150; slippage based on statistics concerning copying of trades between subscriber&#39;s and provider&#39;s servers. This parameter is available only in the trading terminal.</span></li></ul>
+<div style="text-align: justify; text-indent: 0; padding: 0 0 0 0; margin: 12px 17px 0 17px;"><table class="attentable" cellpadding="8" border="1" style="background-color:#f6f8fd;">
+<tr class="attentable">
+<td class="attentable" style="width:142px;"><p class="p_fortable"><a href="https://www.youtube.com/watch?v=cjcaKKLf6aY&amp;list=PLltlMLQ7OLeLZpxDnCMKz1tBlPcUminCT&amp;index=3" target="_blank" title="Watch video: Trade statistics, growth, equity &amp; balance graphs"><img class="help"  alt="Watch video: Trade statistics, growth, equity &amp; balance graphs" title="Watch video: Trade statistics, growth, equity &amp; balance graphs" width="142" height="80" style="margin:0;width:142px;height:80px;border:none" src="../../../help/trading-platform/en/video_signals_stat.png"/></a></p>
+</td>
+<td class="attentable"><p class="p_fortable"><span class="f_fortable" style="font-weight: bold;">Watch video: Trade statistics, growth, equity &amp; balance graphs</span></p>
+<p class="p_fortable"><span class="f_fortable">Trade statistics is a detailed information on a signal, that will help you to make a wise decision. Growth, equity &amp; balance graphs allow you to visually estimate a successful provider.</span></p>
+</td>
+</tr>
+</table>
+</div>
+<H2>Graphs</H2>
+<p class="p_txt"><span class="f_txt">The following graphs are available in the monitoring system:</span></p>
+<H3>Balance Growth</H3>
+<p class="p_Image"><img class="help"  alt="Balance growth graph" title="Balance growth graph" width="715" height="483" style="margin:0 auto 0 auto;width:715px;height:483px;border:none" src="../../../help/trading-platform/en/signal_monitoring_graph.png"/></p>
+<p class="p_txt"><span class="f_txt">The vertical line in the graph indicates the moment when the trade account was connected to the monitoring system. Triangles <img class="help"  alt="Withdrawal" title="Withdrawal" width="10" height="5" style="margin:0;width:10px;height:5px;border:none" src="../../../help/trading-platform/en/signal_withdrawal_icon.png"/> and <img class="help"  alt="Deposit" title="Deposit" width="10" height="5" style="margin:0;width:10px;height:5px;border:none" src="../../../help/trading-platform/en/signal_deposit_icon.png"/> displayed on horizontal axes indicate balance operations on the account - withdrawals and deposits. If you put the mouse cursor over it, the operation amount will be displayed.</span></p>
+<p class="p_txt"><span class="f_txt">Below the graph, you can find a table containing monthly and annual returns. To view the growth for a specific month on the chart, click the corresponding return value.</span></p>
+<H3>Equity graph</H3>
+<p class="p_Image"><img class="help"  alt="Equity graph" title="Equity graph" width="699" height="345" style="margin:0 auto 0 auto;width:699px;height:345px;border:none" src="../../../help/trading-platform/en/signal_monitoring_equity.png"/></p>
+<p class="p_txt"><span class="f_txt">For higher informativeness the graph also includes the balance curve.</span></p>
+<p class="p_txt"><span class="f_txt">The vertical line in the graph indicates the moment when the trade account was connected to the monitoring system.</span></p>
+<p class="p_txt"><span class="f_txt">Triangles <img class="help"  alt="Withdrawal" title="Withdrawal" width="10" height="5" style="margin:0;width:10px;height:5px;border:none" src="../../../help/trading-platform/en/signal_withdrawal_icon.png"/> and <img class="help"  alt="Deposit" title="Deposit" width="10" height="5" style="margin:0;width:10px;height:5px;border:none" src="../../../help/trading-platform/en/signal_deposit_icon.png"/> displayed on horizontal axes indicate balance operations on the account - withdrawals and deposits. If you put the mouse cursor over it, the operation amount will be displayed.</span></p>
+<H3>Balance Graph</H3>
+<p class="p_Image"><img class="help"  alt="Balance graph" title="Balance graph" width="705" height="349" style="margin:0 auto 0 auto;width:705px;height:349px;border:none" src="../../../help/trading-platform/en/signal_monitoring_balance.png"/></p>
+<p class="p_txt"><span class="f_txt">The vertical line in the graph indicates the moment when the trade account was connected to the monitoring system. Triangles <img class="help"  alt="Withdrawal" title="Withdrawal" width="10" height="5" style="margin:0;width:10px;height:5px;border:none" src="../../../help/trading-platform/en/signal_withdrawal_icon.png"/> and <img class="help"  alt="Deposit" title="Deposit" width="10" height="5" style="margin:0;width:10px;height:5px;border:none" src="../../../help/trading-platform/en/signal_deposit_icon.png"/> displayed on horizontal axes indicate balance operations on the account - withdrawals and deposits. If you put the mouse cursor over it, the operation amount will be displayed. Balance changes occurred as a result of withdrawals and deposits are additionally highlighted with red and green color respectively.</span></p>
+<div style="text-align: justify; text-indent: 0; padding: 0 0 0 0; margin: 12px 17px 0 17px;"><table class="attentable" cellpadding="8" border="1" style="background-color:#f6f8fd;">
+<tr class="attentable">
+<td class="attentable" style="width:142px;"><p class="p_fortable"><a href="https://www.youtube.com/watch?v=KqDhr1kumRM&amp;index=4&amp;list=PLltlMLQ7OLeLZpxDnCMKz1tBlPcUminCT" target="_blank" title="Watch video: Risks, distribution, news and reviews of trading signals "><img class="help"  alt="Watch video: Risks, distribution, news and reviews of trading signals " title="Watch video: Risks, distribution, news and reviews of trading signals " width="142" height="80" style="margin:0;width:142px;height:80px;border:none" src="../../../help/trading-platform/en/video_signals_risk.png"/></a></p>
+</td>
+<td class="attentable"><p class="p_fortable"><span class="f_fortable" style="font-weight: bold;">Watch video: Risks, distribution, news and reviews of trading signals </span></p>
+<p class="p_fortable"><span class="f_fortable">How risky your provider trades and what other subscriber think of that? Watch this video and we will answer your questions.</span></p>
+</td>
+</tr>
+</table>
+</div>
+<H3>Risks</H3>
+<p class="p_txt"><span class="f_txt">This section displays MFE and MAE distribution point graphs.</span></p>
+<p class="p_Image"><img class="help"  alt="Risks" title="Risks" width="700" height="848" style="margin:0 auto 0 auto;width:700px;height:848px;border:none" src="../../../help/trading-platform/en/signal_monitoring_risk.png"/></p>
+<p class="p_txt"><span class="f_txt">Maximum profit (MFE) and maximum loss (MAE) values are recorded for each open order during its lifetime. These parameters additionally characterize each closed order using the values of the maximum unrealized potential and maximum permitted risk. MFE/Profit and MAE/Profit distribution graphs display each order as a point with received profit/loss value plotted along the X-axis, while maximum displayed values of potential profit (MFE) and potential loss (MAE) are plotted along the Y-axis.</span></p>
+<p class="p_txt"><span class="f_txt">If you place cursor over a position point on a graph, the same position point will be highlighted on the other graph. Thus you can analyze both potential profit and loss of every position.</span></p>
+<p class="p_txt"><span class="f_txt">The following statistical rates are displayed below the graphs:</span></p>
+<ul style="list-style-type:disc">
+<li class="p_ol"><span class="f_ol" style="font-weight: bold;">Best trade</span><span class="f_ol"> &#150; trade having the highest profit among all profitable ones;</span></li><li class="p_ol"><span class="f_ol" style="font-weight: bold;">Worst trade </span><span class="f_ol">&#150; trade having the worst loss among all loss-making ones;</span></li><li class="p_ol"><span class="f_ol" style="font-weight: bold;">Maximum consecutive wins </span><span class="f_ol">&#150; the amount of trades in the longest profitable sequence and its total profit;</span></li><li class="p_ol"><span class="f_ol" style="font-weight: bold;">Maximum consecutive losses </span><span class="f_ol">&#150; the amount of trades in the longest losing sequence and its total loss;</span></li><li class="p_ol"><span class="f_ol" style="font-weight: bold;">Maximal consecutive profit</span><span class="f_ol"> &#150; the largest profit in a continuous profitable sequence and the amount of appropriate profitable trades;</span></li><li class="p_ol"><span class="f_ol" style="font-weight: bold;">Maximal consecutive loss </span><span class="f_ol">&#150; the largest loss in a continuous losing sequence and the amount of the appropriate losing trades;</span></li></ul>
+<p class="p_txt"><span class="f_txt">If you place cursor over a rate, the corresponding trades will be highlighted on the graphs.</span></p>
+<div style="text-align: justify; text-indent: 0; padding: 0 0 0 0; margin: 12px 17px 0 17px;"><table class="attentable" cellpadding="8" border="1">
+<tr class="attentable">
+<td class="attentable"><ul style="list-style-type:disc">
+<li class="p_tableatten"><span class="f_tableatten">This tab is available at <a href="https://www.mql5.com/en/signals" target="_blank" class="weblink" title="MQL5.community">MQL5.community</a> only.</span></li><li class="p_tableatten"><span class="f_tableatten">You can find out more information about MAE and MFE distributions in the article <a href="https://www.mql5.com/en/articles/1492" target="_blank" class="weblink" title="Article: Mathematics in Trading: How to Estimate Trade Results">Mathematics in Trading: How to Estimate Trade Results</a>.</span></li></ul>
+</td>
+</tr>
+</table>
+</div>
+<H3>Distribution</H3>
+<p class="p_txt"><span class="f_txt">On the &quot;Distribution&quot; tab you can find the number of trade operations displayed by symbols and by type (Buy and Sell):</span></p>
+<p class="p_Image"><img class="help"  alt="Distribution of trade operations by symbols and by type" title="Distribution of trade operations by symbols and by type" width="714" height="168" style="margin:0 auto 0 auto;width:714px;height:168px;border:none" src="../../../help/trading-platform/en/signal_monitoring_distribution.png"/></p>
+<H3>Slippage</H3>
+<p class="p_txt"><span class="f_txt">Slippage tab displays average slippage when executing trade operations on the servers of various brokers.</span></p>
+<p class="p_Image"><img class="help"  alt="Slippage" title="Slippage" width="673" height="280" style="margin:0 auto 0 auto;width:673px;height:280px;border:none" src="../../../help/trading-platform/en/signal_monitoring_slippage.png"/></p>
+<p class="p_txt"><span class="f_txt">The average slippage is calculated based on statistics of trading signals execution at different brokers. Statistics is gathered for all signals at the provider&#39;s server. The difference between the order price placed by the signal provider and the order execution price at the subscriber&#39;s server is defined. The average value is calculated based on these data.</span></p>
+<p class="p_txt"><span class="f_txt">Number of slippage points is displayed according to the price accuracy (number of decimal places) at the signal provider&#39;s side.</span></p>
+<p class="p_txt"><span class="f_txt">Slippage can be caused by differences in quotes on the servers or trade execution delays. The lower the slippage, the higher the accuracy of the signal copying.</span></p>
+<H3>Reviews</H3>
+<p class="p_txt"><span class="f_txt">On the &quot;Reviews&quot; tabs, MQL5.community members can express their opinion on the signal.</span></p>
+<p class="p_Image"><img class="help"  alt="Reviews" title="Reviews" width="684" height="201" style="margin:0 auto 0 auto;width:684px;height:201px;border:none" src="../../../help/trading-platform/en/signal_monitoring_review.png"/></p>
+<H3>News</H3>
+<p class="p_txt"><span class="f_txt">Using this tab, the signal provider can inform subscribers about any changes in the signal operations as well as provide any other useful information. If no news are published, this tab is not displayed.</span></p>
+<H2>Trade Statistics</H2>
+<p class="p_txt"><span class="f_txt">Detailed account trading statistics can be found below the chart.</span></p>
+<ul style="list-style-type:disc">
+<li class="p_ol"><span class="f_ol" style="font-weight: bold;">Trades </span><span class="f_ol">&#150; total number of trades (orders that fix profit or loss);</span></li><li class="p_ol"><span class="f_ol" style="font-weight: bold;">Profit Trades </span><span class="f_ol">&#150; number of profitable trades and their share in the total number of trades in percentage value;</span></li><li class="p_ol"><span class="f_ol" style="font-weight: bold;">Loss Trades </span><span class="f_ol">&#150; number of losing trades and their share in the total number of trades in percentage value;</span></li><li class="p_ol"><span class="f_ol" style="font-weight: bold;">Long Trades </span><span class="f_ol">&#150; number of buy orders fixing profit and amount of profitable long orders in percentage value;</span></li><li class="p_ol"><span class="f_ol" style="font-weight: bold;">Short Trades </span><span class="f_ol">&#150; number of sell orders fixing profit and amount of profitable short orders in percentage value;</span></li><li class="p_ol"><span class="f_ol" style="font-weight: bold;">Best trade</span><span class="f_ol"> &#150; trade having the highest profit among all profitable ones;</span></li><li class="p_ol"><span class="f_ol" style="font-weight: bold;">Worst trade </span><span class="f_ol">&#150; trade having the worst loss among all loss-making ones;</span></li><li class="p_ol"><span class="f_ol" style="font-weight: bold;">Profit Factor</span><span class="f_ol"> &#150; ratio between gross profit and gross loss. One means that these parameters are equal;</span></li><li class="p_ol"><span class="f_ol" style="font-weight: bold;">Gross Profit </span><span class="f_ol">&#150; sum of all profitable orders in monetary units;</span></li><li class="p_ol"><span class="f_ol" style="font-weight: bold;">Gross Loss </span><span class="f_ol">&#150; sum of all loss-making orders in monetary units;</span></li><li class="p_ol"><span class="f_ol" style="font-weight: bold;">Average Profit</span><span class="f_ol"> &#150; average profit for all profitable orders;</span></li><li class="p_ol"><span class="f_ol" style="font-weight: bold;">Average Loss</span><span class="f_ol"> &#150; average loss for all loss-making orders;</span></li><li class="p_ol"><span class="f_ol" style="font-weight: bold;">Recovery Factor </span><span class="f_ol">&#150; this parameter displays the risk level of the strategy (the funds that are put to risk to earn the obtained profit). It is calculated as the ratio of gained profit to the maximum drawdown;</span></li><li class="p_ol"><span class="f_ol" style="font-weight: bold;">Sharpe Ratio </span><span class="f_ol">&#150; this parameter shows strategy efficiency and reliability. It displays the ratio of the arithmetic mean profit during the time the position was open and the standard deviation from that profit. The risk-free rate, which is the profit gained from the appropriate bank deposit funds is also considered here;</span></li><li class="p_ol"><span class="f_ol" style="font-weight: bold;">Expected Payoff </span><span class="f_ol"> is a statistically calculated parameter displaying average profitability/unprofitableness of one trade. Also, it is considered to display the expected profitability/unprofitableness of the next trade;</span></li><li class="p_ol"><span class="f_ol" style="font-weight: bold;">Maximum consecutive wins </span><span class="f_ol">&#150; the amount of trades in the longest profitable sequence and its total profit;</span></li><li class="p_ol"><span class="f_ol" style="font-weight: bold;">Maximum consecutive losses </span><span class="f_ol">&#150; the amount of trades in the longest losing sequence and its total loss;</span></li><li class="p_ol"><span class="f_ol" style="font-weight: bold;">Maximal consecutive profit</span><span class="f_ol"> &#150; the largest profit in a continuous profitable sequence and the amount of appropriate profitable trades;</span></li><li class="p_ol"><span class="f_ol" style="font-weight: bold;">Maximal consecutive loss </span><span class="f_ol">&#150; the largest loss in a continuous losing sequence and the amount of the appropriate losing trades;</span></li><li class="p_ol"><span class="f_ol" style="font-weight: bold;">Annual Forecast</span><span class="f_ol"> &#150; deposit growth forecast for a year according to the monitoring period results;</span></li><li class="p_ol"><span class="f_ol" style="font-weight: bold;">Monthly growth</span><span class="f_ol"> &#150; deposit growth for the last month in percentage values.</span></li></ul>
+<H2>Trading Operations</H2>
+<p class="p_txt"><span class="f_txt">The lower part of the monitoring page displays a detailed data on trading operations on the account.</span></p>
+<H3>Positions</H3>
+<p class="p_txt"><span class="f_txt">Current open positions are shown in a table with the following fields:</span></p>
+<ul style="list-style-type:disc">
+<li class="p_ol"><span class="f_ol" style="font-weight: bold;">Order</span><span class="f_ol"> &#150; ticket number (a unique identifier) of the order;</span></li><li class="p_ol"><span class="f_ol" style="font-weight: bold;">Time</span><span class="f_ol"> &#150; time when the position was opened. The record is represented as YYYY.MM.DD HH:MM (year.month.day hour:minute);</span></li><li class="p_ol"><span class="f_ol" style="font-weight: bold;">Type</span><span class="f_ol"> &#150; position type: &quot;Buy&quot; &#150; long, &quot;Sell&quot; &#150; short;</span></li><li class="p_ol"><span class="f_ol" style="font-weight: bold;">Volume</span><span class="f_ol"> &#150; volume of a trade operation (in lots). The minimal volume and its change step are limited by a brokerage company, the maximal one &#150; by the deposit size;</span></li><li class="p_ol"><span class="f_ol" style="font-weight: bold;">Symbol</span><span class="f_ol"> &#150; a financial instrument of the open position;</span></li><li class="p_ol"><span class="f_ol" style="font-weight: bold;">Price</span><span class="f_ol"> &#150; the open price of the position;</span></li><li class="p_ol"><span class="f_ol" style="font-weight: bold;">S/L</span><span class="f_ol"> &#150; <a href="../positions/orders.html#stop_loss" class="topiclink">Stop Loss level</a> for the current position. If this order was not placed, a zero value is shown in the field;</span></li><li class="p_ol"><span class="f_ol" style="font-weight: bold;">T/P</span><span class="f_ol"> &#150; <a href="../positions/orders.html#take_profit" class="topiclink">Take Profit level</a> for the current position. If this order was not placed, a zero value is shown in the field;</span></li><li class="p_ol"><span class="f_ol" style="font-weight: bold;">Price</span><span class="f_ol"> &#150; the current price of the financial symbol. Bid price is displayed for short positions, while Ask price is used for long ones;</span></li><li class="p_ol"><span class="f_ol" style="font-weight: bold;">Commission </span><span class="f_ol">&#150; broker commission charged for the trade operation;</span></li><li class="p_ol"><span class="f_ol" style="font-weight: bold;">Swap</span><span class="f_ol"> &#150; amount of swaps charged;</span></li><li class="p_ol"><span class="f_ol" style="font-weight: bold;">Profit</span><span class="f_ol"> &#150; the financial result of the deal with the account for the current price is written in this field. A positive result indicates the profitability of the deal, negative one indicates the loss. </span></li></ul>
+<p class="p_txt"><span class="f_txt">Placed pending orders are shown below:</span></p>
+<ul style="list-style-type:disc">
+<li class="p_ol"><span class="f_ol" style="font-weight: bold;">Order</span><span class="f_ol"> &#150; ticket number (a unique identifier) of the pending order;</span></li><li class="p_ol"><span class="f_ol" style="font-weight: bold;">Time</span><span class="f_ol"> &#150; time when the pending order was placed. The record is represented as YYYY.MM.DD HH:MM (year.month.day hour:minute);</span></li><li class="p_ol"><span class="f_ol" style="font-weight: bold;">Type</span><span class="f_ol"> &#150; <a href="../positions/orders.html" class="topiclink">type of the pending order</a>: &quot;Sell Stop&quot;, &quot;Sell Limit&quot;, &quot;Buy Stop&quot; or &quot;Buy Limit&quot;;</span></li><li class="p_ol"><span class="f_ol" style="font-weight: bold;">Volume</span><span class="f_ol"> &#150; volume requested in the pending order (in lots);</span></li><li class="p_ol"><span class="f_ol" style="font-weight: bold;">Symbol</span><span class="f_ol"> &#150; a financial instrument of the pending order;</span></li><li class="p_ol"><span class="f_ol" style="font-weight: bold;">Price</span><span class="f_ol"> &#150; price of the pending order activation;</span></li><li class="p_ol"><span class="f_ol" style="font-weight: bold;">S/L</span><span class="f_ol"> &#150; level of the placed <a href="../positions/orders.html" class="topiclink">Stop Loss order</a>. If this order was not placed, a zero value is shown in the field;</span></li><li class="p_ol"><span class="f_ol" style="font-weight: bold;">T/P</span><span class="f_ol"> &#150; level of the set <a href="../positions/orders.html#take_profit" class="topiclink">Take Profit</a> order. If this order was not placed, a zero value is shown in the field;</span></li><li class="p_ol"><span class="f_ol" style="font-weight: bold;">Price</span><span class="f_ol"> &#150; the current price of the financial symbol. Bid price is displayed for short orders, while Ask price is used for long ones. The price of the last performed deal (Last) is displayed for the orders involving exchange symbols (both directions).</span></li></ul>
+<H3>History</H3>
+<p class="p_txt"><span class="f_txt">This tab displays the history of orders on the trading account. The history of orders is also displayed in a table with the following fields:</span></p>
+<ul style="list-style-type:disc">
+<li class="p_ol"><span class="f_ol" style="font-weight: bold;">Order</span><span class="f_ol"> &#150; ticket number (a unique identifier) of an order;</span></li><li class="p_ol"><span class="f_ol" style="font-weight: bold;">Time</span><span class="f_ol"> &#150; time of an order. The record is represented as YYYY.MM.DD HH:MM (year.month.day hour:minute);</span></li><li class="p_ol"><span class="f_ol" style="font-weight: bold;">Type</span><span class="f_ol"> &#150; type of a trade operation: &quot;Buy&quot; &#150; a buy deal, &quot;Sell&quot; &#150; a sell deal;</span></li><li class="p_ol"><span class="f_ol" style="font-weight: bold;">Volume</span><span class="f_ol"> &#150; volume of an executed order (in lots);</span></li><li class="p_ol"><span class="f_ol" style="font-weight: bold;">Symbol</span><span class="f_ol"> &#150; financial instrument of an order;</span></li><li class="p_ol"><span class="f_ol" style="font-weight: bold;">Price</span><span class="f_ol"> &#150; price an order was executed at;</span></li><li class="p_ol"><span class="f_ol" style="font-weight: bold;">S/L</span><span class="f_ol"> &#150; level of the placed <a href="../positions/orders.html" class="topiclink">Stop Loss order</a>. If this order was not placed, a zero value is shown in the field;</span></li></ul>
+<ul style="list-style-type:disc">
+<li class="p_ol"><span class="f_ol" style="font-weight: bold;">T/P</span><span class="f_ol"> &#150; level of the set <a href="../positions/orders.html#take_profit" class="topiclink">Take Profit</a> order. If this order was not placed, a zero value is shown in the field;</span></li><li class="p_ol"><span class="f_ol" style="font-weight: bold;">Time</span><span class="f_ol"> &#150; time of closing a position. The record is represented as YYYY.MM.DD HH:MM (year.month.day hour:minute);</span></li><li class="p_ol"><span class="f_ol" style="font-weight: bold;">Commission </span><span class="f_ol">&#150; broker commission charged for the trade operation;</span></li></ul>
+<ul style="list-style-type:disc">
+<li class="p_ol"><span class="f_ol" style="font-weight: bold;">Swap</span><span class="f_ol"> &#150; amount of swaps charged;</span></li></ul>
+<ul style="list-style-type:disc">
+<li class="p_ol"><span class="f_ol" style="font-weight: bold;">Profit</span><span class="f_ol"> &#150; the financial result of the order closing;</span></li><li class="p_ol"><span class="f_ol" style="font-weight: bold;">Comment</span><span class="f_ol"> &#150; comment to a trade operation.</span></li></ul>
+<p class="p_txt"><span class="f_txt">&nbsp;</span></p>
+
+</div>
+
+        </div>
+        
+        <div class="helpNavigation">
+            
+            <div class="arrowLeft">
+                <span>&larr;</span>&nbsp;<a href="signal_subscriber.html" rel="prev">Signal Subscribers</a>
+            </div>
+            
+            <div class="arrowRight">
+                <a href="../beginning/market.html" rel="next">Market</a>&nbsp;<span>&rarr;</span>
+            </div>
+            
+            <div style="clear: both;"></div>
+        </div>
+    </div>
+
+    
+</div>
+    
+<script type="application/ld+json">
+{
+   "@context": "https://schema.org",
+   "@type": "TechArticle",
+   "url": "/en/trading-platform/help/signals/signal_monitoring",
+   "publisher":{
+      "@type":"Organization",
+      "name":"MetaQuotes",
+      "logo":"/i/metatrader-4-logo-og.png"
+   },
+   "headline": "MetaTrader 4 Help: Account Monitoring",
+   "mainEntityOfPage": "/en/trading-platform/help/signals/signal_monitoring",
+   "datePublished":"Thu, 11 Nov 2021 09:42:56 GMT"
+}
+</script>
+
+
+<div class="line"></div>
+
+
+
+    <div class="footer container">
+        <ul class="links">
+        
+        <li><a href="../../../trading-platform.html">Trading Platform</a></li>
+        <li><a href="../../../mobile-trading.html">Mobile Trading</a></li>
+        <li><a href="../../../market.html">Market</a></li>
+        <li><a href="../../../signals.html">Signals</a></li>
+        <li><a href="../../../automated-trading.html">Automated Trading</a></li>
+        <li><a href="../../../download.html">Download</a></li>
+        <li><a href="../../../brokers.html">For Brokers</a></li>
+        <li><a href="../../../company.html">Company</a></li>
+        <li><a target="_blank" href="https://www.metaquotes.net/en/legal">Legal</a></li>
+            
+        </ul>
+
+
+
+        <div class="copyright">
+            Copyright 2000-2021, <a href="https://www.metaquotes.net" target="_blank">MetaQuotes Ltd</a>
+        </div>
+
+        <div class="disclaimer">
+            MetaQuotes is a software development company and does not provide investment or brokerage services
+        </div>
+        <script type="text/javascript">
+            mqGlobal.AddOnReady(function ()
+            {
+                window.MqCookies = new MqCookie;
+                MqCookies.init('www.metatrader4.com', null, null);
+                
+                if (/Trident|MSIE/.test(window.navigator.userAgent) === false)
+                    FloatVerticalPanel('This website uses cookies. Learn more about our <a href="https://www.metaquotes.net/en/legal/cookies" target="_blank">Cookies Policy</a>.', 'cookie_accept');
+                    
+            });
+        </script>
+    </div>
+</div>
+    
+<script type='text/javascript'>/*<![CDATA[*/ if(!window.V) var V=[]; /*]]>*/</script><form Style="display:none" action="https://www.metatrader4.com/en/request-buy" class="form-request__wrapper form-request__wrapper_start" enctype="multipart/form-data" id="formRequestPop" method="post" novalidate="novalidate" onsubmit="if(Validate(this)) Ajax.form(this,{onready:formRequestPopFormRequestBase.onReady,onerror:formRequestPopFormRequestBase.onError,onbeginrequest:formRequestPopFormRequestBase.onBegin,onendrequest:formRequestPopFormRequestBase.onEnd});return(false);">
+<div id="formRequestPopbrokersBuyFormContent" class="form-request__content">
+    <div class="form-request__title">Become a broker with MetaTrader&nbsp;5 platform</div>
+    <div class="form-request__sub-title">For any trader-related query — please visit <a href="https://www.mql5.com/en/forum">www.mql5.com/en/forum</a> for assistance</div>
+    
+
+    <div class="form-request">
+        <div class="form-request__item">
+            <div class="form-request__label">
+                <label for="formRequestPopCompany">
+                    Registered company name
+                </label>
+                
+
+
+            </div>
+
+            <div class="form-request__control">
+                <input type="text" name="Company" class="input input_big" id="formRequestPopCompany" title="Company name specified in the documents" placeholder="Company name specified in the documents" maxlength="250">
+                <script type='text/javascript' id='validate_formRequestPopCompany'>/*<![CDATA[*/ V.push(['formRequestPopCompany',2,'Please enter the valid company name',2,250]); /*]]>*/</script>
+            </div>
+        </div>
+        
+        
+        <div class="form-request__item">
+            <div class="form-request__label">
+                <label for="formRequestPopKindActivity">
+                    Business activity type
+                </label>
+            </div>
+
+            <div class="form-request__control">
+                <div class="select select_big">
+                <select name="KindActivity" id="formRequestPopKindActivity">
+                    <option value=""></option>
+                    <option value="1">I am already a broker</option>
+                    <option value="2">I want to become a broker</option>
+                    <option value="3">I am a trader</option>
+                </select>
+                </div>
+                <script type='text/javascript' id='validate_formRequestPopKindActivity'>/*<![CDATA[*/ V.push(['formRequestPopKindActivity',2,'Please specify your company\'s type of activity',1,2]); /*]]>*/</script>
+            </div>
+        </div>
+
+
+        <div class="form-request__item">
+            <div class="form-request__label">
+                <label for="formRequestPopCountryCode">
+                    Country of registration
+                </label>
+            </div>
+
+            <div class="form-request__control">
+                <div class="select select_big">
+                    <select name="CountryCode" id="formRequestPopCountryCode" >
+<option value="AF" data-phonecode="+93" >Afghanistan</option>
+<option value="AX" data-phonecode="+358" >Åland Islands</option>
+<option value="AL" data-phonecode="+355" >Albania</option>
+<option value="DZ" data-phonecode="+213" >Algeria</option>
+<option value="AS" data-phonecode="+1684" >American Samoa</option>
+<option value="AD" data-phonecode="+376" >Andorra</option>
+<option value="AO" data-phonecode="+244" >Angola</option>
+<option value="AI" data-phonecode="+1264" >Anguilla</option>
+<option value="AQ" data-phonecode="+672" >Antarctica</option>
+<option value="AG" data-phonecode="+1268" >Antigua and Barbuda</option>
+<option value="AR" data-phonecode="+54" >Argentina</option>
+<option value="AM" data-phonecode="+374" >Armenia</option>
+<option value="AW" data-phonecode="+297" >Aruba</option>
+<option value="AU" data-phonecode="+61" >Australia</option>
+<option value="AT" data-phonecode="+43" >Austria</option>
+<option value="AZ" data-phonecode="+994" >Azerbaijan</option>
+<option value="BS" data-phonecode="+1242" >Bahamas</option>
+<option value="BH" data-phonecode="+973" >Bahrain</option>
+<option value="BD" data-phonecode="+880" >Bangladesh</option>
+<option value="BB" data-phonecode="+1246" >Barbados</option>
+<option value="BY" data-phonecode="+375" >Belarus</option>
+<option value="BE" data-phonecode="+32" >Belgium</option>
+<option value="BZ" data-phonecode="+501" >Belize</option>
+<option value="BJ" data-phonecode="+229" >Benin</option>
+<option value="BM" data-phonecode="+1441" >Bermuda</option>
+<option value="BT" data-phonecode="+975" >Bhutan</option>
+<option value="BO" data-phonecode="+591" >Bolivia</option>
+<option value="BQ" data-phonecode="+599" >Bonaire, Sint Eustatius and Saba</option>
+<option value="BA" data-phonecode="+387" >Bosnia and Herzegovina</option>
+<option value="BW" data-phonecode="+267" >Botswana</option>
+<option value="BV" data-phonecode="+" >Bouvet Island</option>
+<option value="BR" data-phonecode="+55" >Brazil</option>
+<option value="IO" data-phonecode="+" >British Indian Ocean Territory</option>
+<option value="BN" data-phonecode="+673" >Brunei</option>
+<option value="BG" data-phonecode="+359" >Bulgaria</option>
+<option value="BF" data-phonecode="+226" >Burkina Faso</option>
+<option value="BI" data-phonecode="+257" >Burundi</option>
+<option value="CV" data-phonecode="+238" >Cabo Verde</option>
+<option value="KH" data-phonecode="+855" >Cambodia</option>
+<option value="CM" data-phonecode="+237" >Cameroon</option>
+<option value="CA" data-phonecode="+1" >Canada</option>
+<option value="KY" data-phonecode="+1345" >Cayman Islands</option>
+<option value="CF" data-phonecode="+236" >Central African Republic</option>
+<option value="TD" data-phonecode="+235" >Chad</option>
+<option value="CL" data-phonecode="+56" >Chile</option>
+<option value="CN" data-phonecode="+86" >China</option>
+<option value="CX" data-phonecode="+61" >Christmas Island</option>
+<option value="CC" data-phonecode="+61" >Cocos (Keeling) Islands</option>
+<option value="CO" data-phonecode="+57" >Colombia</option>
+<option value="KM" data-phonecode="+269" >Comoros</option>
+<option value="CG" data-phonecode="+242" >Congo</option>
+<option value="CD" data-phonecode="+243" >Congo, Democratic Republic of the</option>
+<option value="CK" data-phonecode="+682" >Cook Islands</option>
+<option value="CR" data-phonecode="+506" >Costa Rica</option>
+<option value="CI" data-phonecode="+225" >Côte d'Ivoire</option>
+<option value="HR" data-phonecode="+385" >Croatia</option>
+<option value="CU" data-phonecode="+53" >Cuba</option>
+<option value="CW" data-phonecode="+" >Curaçao</option>
+<option value="CY" data-phonecode="+357" >Cyprus</option>
+<option value="CZ" data-phonecode="+420" >Czechia</option>
+<option value="DK" data-phonecode="+45" >Denmark</option>
+<option value="DJ" data-phonecode="+253" >Djibouti</option>
+<option value="DM" data-phonecode="+1767" >Dominica</option>
+<option value="DO" data-phonecode="+1" >Dominican Republic</option>
+<option value="EC" data-phonecode="+593" >Ecuador</option>
+<option value="EG" data-phonecode="+20" >Egypt</option>
+<option value="SV" data-phonecode="+503" >El Salvador</option>
+<option value="GQ" data-phonecode="+240" >Equatorial Guinea</option>
+<option value="ER" data-phonecode="+291" >Eritrea</option>
+<option value="EE" data-phonecode="+372" >Estonia</option>
+<option value="SZ" data-phonecode="+268" >Eswatini</option>
+<option value="ET" data-phonecode="+251" >Ethiopia</option>
+<option value="FK" data-phonecode="+500" >Falkland Islands</option>
+<option value="FO" data-phonecode="+298" >Faroe Islands</option>
+<option value="FJ" data-phonecode="+679" >Fiji</option>
+<option value="FI" data-phonecode="+358" >Finland</option>
+<option value="FR" data-phonecode="+33" >France</option>
+<option value="GF" data-phonecode="+" >French Guiana</option>
+<option value="PF" data-phonecode="+689" >French Polynesia</option>
+<option value="TF" data-phonecode="+" >French Southern Territories</option>
+<option value="GA" data-phonecode="+241" >Gabon</option>
+<option value="GM" data-phonecode="+220" >Gambia</option>
+<option value="GE" data-phonecode="+995" >Georgia</option>
+<option value="DE" data-phonecode="+49" >Germany</option>
+<option value="GH" data-phonecode="+233" >Ghana</option>
+<option value="GI" data-phonecode="+350" >Gibraltar</option>
+<option value="GR" data-phonecode="+30" >Greece</option>
+<option value="GL" data-phonecode="+299" >Greenland</option>
+<option value="GD" data-phonecode="+1473" >Grenada</option>
+<option value="GP" data-phonecode="+" >Guadeloupe</option>
+<option value="GU" data-phonecode="+1671" >Guam</option>
+<option value="GT" data-phonecode="+502" >Guatemala</option>
+<option value="GG" data-phonecode="+" >Guernsey</option>
+<option value="GN" data-phonecode="+224" >Guinea</option>
+<option value="GW" data-phonecode="+245" >Guinea-Bissau</option>
+<option value="GY" data-phonecode="+592" >Guyana</option>
+<option value="HT" data-phonecode="+509" >Haiti</option>
+<option value="HM" data-phonecode="+" >Heard Island and McDonald Islands</option>
+<option value="VA" data-phonecode="+39" >Holy See</option>
+<option value="HN" data-phonecode="+504" >Honduras</option>
+<option value="HK" data-phonecode="+852" >Hong Kong</option>
+<option value="HU" data-phonecode="+36" >Hungary</option>
+<option value="IS" data-phonecode="+354" >Iceland</option>
+<option value="IN" data-phonecode="+91" >India</option>
+<option value="ID" data-phonecode="+62" >Indonesia</option>
+<option value="IR" data-phonecode="+98" >Iran</option>
+<option value="IQ" data-phonecode="+964" >Iraq</option>
+<option value="IE" data-phonecode="+353" >Ireland</option>
+<option value="IM" data-phonecode="+44" >Isle of Man</option>
+<option value="IL" data-phonecode="+972" >Israel</option>
+<option value="IT" data-phonecode="+39" >Italy</option>
+<option value="JM" data-phonecode="+1876" >Jamaica</option>
+<option value="JP" data-phonecode="+81" >Japan</option>
+<option value="JE" data-phonecode="+" >Jersey</option>
+<option value="JO" data-phonecode="+962" >Jordan</option>
+<option value="KZ" data-phonecode="+7" >Kazakhstan</option>
+<option value="KE" data-phonecode="+254" >Kenya</option>
+<option value="KI" data-phonecode="+686" >Kiribati</option>
+<option value="KP" data-phonecode="+850" >Korea, Democratic People's Republic of</option>
+<option value="KR" data-phonecode="+82" >Korea, Republic of</option>
+<option value="KW" data-phonecode="+965" >Kuwait</option>
+<option value="KG" data-phonecode="+996" >Kyrgyzstan</option>
+<option value="LA" data-phonecode="+856" >Lao People's Democratic Republic</option>
+<option value="LV" data-phonecode="+371" >Latvia</option>
+<option value="LB" data-phonecode="+961" >Lebanon</option>
+<option value="LS" data-phonecode="+266" >Lesotho</option>
+<option value="LR" data-phonecode="+231" >Liberia</option>
+<option value="LY" data-phonecode="+218" >Libya</option>
+<option value="LI" data-phonecode="+423" >Liechtenstein</option>
+<option value="LT" data-phonecode="+370" >Lithuania</option>
+<option value="LU" data-phonecode="+352" >Luxembourg</option>
+<option value="MO" data-phonecode="+853" >Macao</option>
+<option value="MG" data-phonecode="+261" >Madagascar</option>
+<option value="MW" data-phonecode="+265" >Malawi</option>
+<option value="MY" data-phonecode="+60" >Malaysia</option>
+<option value="MV" data-phonecode="+960" >Maldives</option>
+<option value="ML" data-phonecode="+223" >Mali</option>
+<option value="MT" data-phonecode="+356" >Malta</option>
+<option value="MH" data-phonecode="+692" >Marshall Islands</option>
+<option value="MQ" data-phonecode="+" >Martinique</option>
+<option value="MR" data-phonecode="+222" >Mauritania</option>
+<option value="MU" data-phonecode="+230" >Mauritius</option>
+<option value="YT" data-phonecode="+262" >Mayotte</option>
+<option value="MX" data-phonecode="+52" >Mexico</option>
+<option value="FM" data-phonecode="+691" >Micronesia</option>
+<option value="MD" data-phonecode="+373" >Moldova</option>
+<option value="MC" data-phonecode="+377" >Monaco</option>
+<option value="MN" data-phonecode="+976" >Mongolia</option>
+<option value="ME" data-phonecode="+382" >Montenegro</option>
+<option value="MS" data-phonecode="+1664" >Montserrat</option>
+<option value="MA" data-phonecode="+212" >Morocco</option>
+<option value="MZ" data-phonecode="+258" >Mozambique</option>
+<option value="MM" data-phonecode="+95" >Myanmar</option>
+<option value="NA" data-phonecode="+264" >Namibia</option>
+<option value="NR" data-phonecode="+674" >Nauru</option>
+<option value="NP" data-phonecode="+977" >Nepal</option>
+<option value="NL" data-phonecode="+31" >Netherlands</option>
+<option value="AN" data-phonecode="+599" >Netherlands Antilles</option>
+<option value="NC" data-phonecode="+687" >New Caledonia</option>
+<option value="NZ" data-phonecode="+64" >New Zealand</option>
+<option value="NI" data-phonecode="+505" >Nicaragua</option>
+<option value="NE" data-phonecode="+227" >Niger</option>
+<option value="NG" data-phonecode="+234" >Nigeria</option>
+<option value="NU" data-phonecode="+683" >Niue</option>
+<option value="NF" data-phonecode="+" >Norfolk Island</option>
+<option value="MK" data-phonecode="+389" >North Macedonia</option>
+<option value="MP" data-phonecode="+1670" >Northern Mariana Islands</option>
+<option value="NO" data-phonecode="+47" >Norway</option>
+<option value="OM" data-phonecode="+968" >Oman</option>
+<option value="PK" data-phonecode="+92" >Pakistan</option>
+<option value="PW" data-phonecode="+680" >Palau</option>
+<option value="PS" data-phonecode="+970" >Palestine</option>
+<option value="PA" data-phonecode="+507" >Panama</option>
+<option value="PG" data-phonecode="+675" >Papua New Guinea</option>
+<option value="PY" data-phonecode="+595" >Paraguay</option>
+<option value="PE" data-phonecode="+51" >Peru</option>
+<option value="PH" data-phonecode="+63" >Philippines</option>
+<option value="PN" data-phonecode="+870" >Pitcairn</option>
+<option value="PL" data-phonecode="+48" >Poland</option>
+<option value="PT" data-phonecode="+351" >Portugal</option>
+<option value="PR" data-phonecode="+1" >Puerto Rico</option>
+<option value="QA" data-phonecode="+974" >Qatar</option>
+<option value="RE" data-phonecode="+" >Réunion</option>
+<option value="RO" data-phonecode="+40" >Romania</option>
+<option value="RU" data-phonecode="+7" selected="selected">Russian Federation</option>
+<option value="RW" data-phonecode="+250" >Rwanda</option>
+<option value="BL" data-phonecode="+590" >Saint Barthélemy</option>
+<option value="SH" data-phonecode="+290" >Saint Helena, Ascension and Tristan da Cunha</option>
+<option value="KN" data-phonecode="+1869" >Saint Kitts and Nevis</option>
+<option value="LC" data-phonecode="+1758" >Saint Lucia</option>
+<option value="MF" data-phonecode="+1599" >Saint Martin (French part)</option>
+<option value="PM" data-phonecode="+508" >Saint Pierre and Miquelon</option>
+<option value="VC" data-phonecode="+1784" >Saint Vincent and the Grenadines</option>
+<option value="WS" data-phonecode="+685" >Samoa</option>
+<option value="SM" data-phonecode="+378" >San Marino</option>
+<option value="ST" data-phonecode="+239" >Sao Tome and Principe</option>
+<option value="SA" data-phonecode="+966" >Saudi Arabia</option>
+<option value="SN" data-phonecode="+221" >Senegal</option>
+<option value="RS" data-phonecode="+381" >Serbia</option>
+<option value="SC" data-phonecode="+248" >Seychelles</option>
+<option value="SL" data-phonecode="+232" >Sierra Leone</option>
+<option value="SG" data-phonecode="+65" >Singapore</option>
+<option value="SX" data-phonecode="+" >Sint Maarten (Dutch part)</option>
+<option value="SK" data-phonecode="+421" >Slovakia</option>
+<option value="SI" data-phonecode="+386" >Slovenia</option>
+<option value="SB" data-phonecode="+677" >Solomon Islands</option>
+<option value="SO" data-phonecode="+252" >Somalia</option>
+<option value="ZA" data-phonecode="+27" >South Africa</option>
+<option value="GS" data-phonecode="+" >South Georgia and the South Sandwich Islands</option>
+<option value="SS" data-phonecode="+211" >South Sudan</option>
+<option value="ES" data-phonecode="+34" >Spain</option>
+<option value="LK" data-phonecode="+94" >Sri Lanka</option>
+<option value="SD" data-phonecode="+249" >Sudan</option>
+<option value="SR" data-phonecode="+597" >Suriname</option>
+<option value="SJ" data-phonecode="+" >Svalbard and Jan Mayen</option>
+<option value="SE" data-phonecode="+46" >Sweden</option>
+<option value="CH" data-phonecode="+41" >Switzerland</option>
+<option value="SY" data-phonecode="+963" >Syria</option>
+<option value="TW" data-phonecode="+886" >Taiwan</option>
+<option value="TJ" data-phonecode="+992" >Tajikistan</option>
+<option value="TZ" data-phonecode="+255" >Tanzania</option>
+<option value="TH" data-phonecode="+66" >Thailand</option>
+<option value="TL" data-phonecode="+670" >Timor-Leste</option>
+<option value="TG" data-phonecode="+228" >Togo</option>
+<option value="TK" data-phonecode="+690" >Tokelau</option>
+<option value="TO" data-phonecode="+676" >Tonga</option>
+<option value="TT" data-phonecode="+1868" >Trinidad and Tobago</option>
+<option value="TN" data-phonecode="+216" >Tunisia</option>
+<option value="TR" data-phonecode="+90" >Turkey</option>
+<option value="TM" data-phonecode="+993" >Turkmenistan</option>
+<option value="TC" data-phonecode="+1649" >Turks and Caicos Islands</option>
+<option value="TV" data-phonecode="+688" >Tuvalu</option>
+<option value="UG" data-phonecode="+256" >Uganda</option>
+<option value="UA" data-phonecode="+380" >Ukraine</option>
+<option value="AE" data-phonecode="+971" >United Arab Emirates</option>
+<option value="GB" data-phonecode="+44" >United Kingdom</option>
+<option value="UM" data-phonecode="+" >United States Minor Outlying Islands</option>
+<option value="US" data-phonecode="+1" >United States of America</option>
+<option value="UY" data-phonecode="+598" >Uruguay</option>
+<option value="UZ" data-phonecode="+998" >Uzbekistan</option>
+<option value="VU" data-phonecode="+678" >Vanuatu</option>
+<option value="VE" data-phonecode="+58" >Venezuela</option>
+<option value="VN" data-phonecode="+84" >Vietnam</option>
+<option value="VG" data-phonecode="+1284" >Virgin Islands (British)</option>
+<option value="VI" data-phonecode="+1340" >Virgin Islands (U.S.)</option>
+<option value="WF" data-phonecode="+681" >Wallis and Futuna</option>
+<option value="EH" data-phonecode="+" >Western Sahara</option>
+<option value="YE" data-phonecode="+967" >Yemen</option>
+<option value="ZM" data-phonecode="+260" >Zambia</option>
+<option value="ZW" data-phonecode="+263" >Zimbabwe</option>
+</select>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="form-request__separator"></div>
+
+
+        <div class="form-request__item">
+            <div class="form-request__label">
+                <label for="formRequestPopName">
+                    Name
+                </label>
+            </div>
+
+            <div class="form-request__control">
+                <input type="text" class="input input_big form-request__input-name" name="Name" id="formRequestPopName" title="Please enter your name, for example: John Smith" placeholder="John Smith" maxlength="250">
+                <script type='text/javascript' id='validate_formRequestPopName'>/*<![CDATA[*/ V.push(['formRequestPopName',2,'Please enter your name, for example: John Smith',2,255]); /*]]>*/</script>
+            </div>
+        </div>
+
+
+        <div class="form-request__item">
+            <div class="form-request__label">
+                <label for="formRequestPopEmail">
+                    Email
+                </label>
+            </div>
+
+            <div class="form-request__control">
+                <input type="email" name="Email" class="input input_big form-request__input-email" id="formRequestPopEmail" title="Please enter your email, for example: info@example.com" placeholder="info@example.com" maxlength="250">
+                <script type='text/javascript' id='validate_formRequestPopEmail'>/*<![CDATA[*/ V.push(['formRequestPopEmail',4,'Please enter your email, for example: info@example.com']);V.push(['formRequestPopEmail',2,'Please enter your email, for example: info@example.com',5,250]); /*]]>*/</script>
+            </div>
+        </div>
+
+
+        <div class="form-request__item">
+            <div class="form-request__label">
+                <label for="formRequestPopPhone">
+                    Phone number
+                </label>
+            </div>
+
+            <div class="form-request__control">
+                <div class="phone-control phone-control_big">
+                    <input type="tel" class="phone-control__code" name="PhoneCode" id="formRequestPopPhoneCode" title="Please enter the country calling code, for example: +123" placeholder="+123" maxlength="8">
+                    <input type="tel" class="phone-control__number" name="Phone" id="formRequestPopPhone" title="Please enter your phone, for example: 123456789" placeholder="555-555-5555" maxlength="30">
+                </div>
+
+                <script type='text/javascript' id='validate_formRequestPopPhoneCode'>/*<![CDATA[*/ V.push(['formRequestPopPhoneCode',2,'Please enter the country calling code, for example: +123',2,8]);V.push(['formRequestPopPhoneCode',6,'Please enter the country calling code, for example: +123','^$|^\\+[0-9]{1,7}$','i']); /*]]>*/</script>
+
+                <script type='text/javascript' id='validate_formRequestPopPhone'>/*<![CDATA[*/ V.push(['formRequestPopPhone',2,'Please enter your phone, for example: 123456789',3,30]);V.push(['formRequestPopPhone',6,'Please enter your phone, for example: 123456789','^$|^[0-9 \\-\\(\\)\\.]{3,30}$','']); /*]]>*/</script>
+            </div>
+        </div>
+        
+        
+        <div class="form-request__separator"></div>
+
+
+        <div class="form-request__item form-request__item_hidden" id="formRequestPopWhatsAppPhoneCodeFormItem">
+            <div class="form-request__label">
+                <label for="formRequestPopWhatsAppPhone">
+                    <a href="javascript:formRequestPopFormRequestBase.showFormItem('formRequestPopWhatsAppPhoneCodeFormItem')" id="formRequestPopWhatsAppPhoneHide" class="form-request__label-toggle-hide form-request__label-icon form-request__label-icon_whatsapp">WhatsApp</a>
+                </label>
+            </div>
+
+            <div class="form-request__control">
+                <a href="javascript:formRequestPopFormRequestBase.showFormItem('formRequestPopWhatsAppPhoneCodeFormItem')" id="formRequestPopWhatsAppPhoneShow" class="form-request__control-toggle-show form-request__label-icon form-request__label-icon_whatsapp">Add WhatsApp</a>
+
+                <div class="phone-control phone-control_big">
+                    <input type="tel" class="phone-control__code" name="WhatsAppPhoneCode" id="formRequestPopWhatsAppPhoneCode" title="Please enter the country calling code, for example: +123" placeholder="+123" maxlength="8">
+                    <input type="tel" class="phone-control__number" name="WhatsAppPhone" id="formRequestPopWhatsAppPhone" title="Please enter your phone, for example: 123456789" placeholder="555-555-5555" maxlength="30">
+                </div>
+                <script type='text/javascript' id='validate_formRequestPopWhatsAppPhoneCode'>/*<![CDATA[*/ V.push(['formRequestPopWhatsAppPhoneCode',6,'Please enter the country calling code, for example: +123','^$|^\\+[0-9]{1,7}$','i']); /*]]>*/</script>
+                <script type='text/javascript' id='validate_formRequestPopWhatsAppPhone'>/*<![CDATA[*/ V.push(['formRequestPopWhatsAppPhone',6,'Please enter your phone, for example: 123456789','^$|^[0-9 \\-\\(\\)\\.]{3,30}$','']); /*]]>*/</script>
+            </div>
+        </div>
+
+
+        <div class="form-request__item form-request__item_hidden" id="formRequestPopTelegramPhoneCodeFormItem">
+            <div class="form-request__label">
+                <label for="formRequestPopTelegramPhone">
+                    <a href="javascript:formRequestPopFormRequestBase.showFormItem('formRequestPopTelegramPhoneCodeFormItem')" id="formRequestPopTelegramPhoneHide" class="form-request__label-toggle-hide form-request__label-icon form-request__label-icon_telegram">Telegram</a>
+                </label>
+            </div>
+
+            <div class="form-request__control">
+                <a href="javascript:formRequestPopFormRequestBase.showFormItem('formRequestPopTelegramPhoneCodeFormItem')" id="formRequestPopTelegramPhoneShow" class="form-request__control-toggle-show form-request__label-icon form-request__label-icon_telegram">Add Telegram</a>
+
+                <div class="phone-control phone-control_big">
+                    <input type="tel" class="phone-control__code" name="TelegramPhoneCode" id="formRequestPopTelegramPhoneCode" title="Please enter the country calling code, for example: +123" placeholder="+123" maxlength="8">
+                    <input type="tel" class="phone-control__number" name="TelegramPhone" id="formRequestPopTelegramPhone" title="Please enter your phone, for example: 123456789" placeholder="555-555-5555" maxlength="30">
+                </div>
+                <script type='text/javascript' id='validate_formRequestPopTelegramPhoneCode'>/*<![CDATA[*/ V.push(['formRequestPopTelegramPhoneCode',6,'Please enter the country calling code, for example: +123','^$|^\\+[0-9]{1,7}$','i']); /*]]>*/</script>
+                <script type='text/javascript' id='validate_formRequestPopTelegramPhone'>/*<![CDATA[*/ V.push(['formRequestPopTelegramPhone',6,'Please enter your phone, for example: 123456789','^$|^[0-9 \\-\\(\\)\\.]{3,30}$','']); /*]]>*/</script>
+            </div>
+        </div>
+
+
+        <div class="form-request__item form-request__item_hidden" id="formRequestPopViberPhoneCodeFormItem">
+            <div class="form-request__label">
+                <label for="formRequestPopViberPhone">
+                    <a href="javascript:formRequestPopFormRequestBase.showFormItem('formRequestPopViberPhoneCodeFormItem')" id="formRequestPopViberPhoneHide" class="form-request__label-toggle-hide form-request__label-icon form-request__label-icon_viber">Viber</a>
+                </label>
+            </div>
+
+            <div class="form-request__control">
+                <a href="javascript:formRequestPopFormRequestBase.showFormItem('formRequestPopViberPhoneCodeFormItem')" id="formRequestPopViberPhoneShow" class="form-request__control-toggle-show form-request__label-icon form-request__label-icon_viber">Add Viber</a>
+
+                <div class="phone-control phone-control_big">
+                    <input type="tel" class="phone-control__code" name="ViberPhoneCode" id="formRequestPopViberPhoneCode" title="Please enter the country calling code, for example: +123" placeholder="+123" maxlength="8">
+                    <input type="tel" class="phone-control__number" name="ViberPhone" id="formRequestPopViberPhone" title="Please enter your phone, for example: 123456789" placeholder="555-555-5555" maxlength="30">
+                </div>
+                <script type='text/javascript' id='validate_formRequestPopViberPhoneCode'>/*<![CDATA[*/ V.push(['formRequestPopViberPhoneCode',6,'Please enter the country calling code, for example: +123','^$|^\\+[0-9]{1,7}$','i']); /*]]>*/</script>
+                <script type='text/javascript' id='validate_formRequestPopViberPhone'>/*<![CDATA[*/ V.push(['formRequestPopViberPhone',6,'Please enter your phone, for example: 123456789','^$|^[0-9 \\-\\(\\)\\.]{3,30}$','']); /*]]>*/</script>
+            </div>
+        </div>
+        
+
+    </div>
+
+
+    <div class="form-request__button">
+        <div class="form-request__agree">
+            <input type="checkbox" name="agreePolicy" id="formRequestPopAgreePolicy" /> 
+            <label for="formRequestPopAgreePolicy" class="form-request__agree-label">
+                I agree with the <a href="https://www.metaquotes.net/en/legal/policies" target="_blank">Privacy and Data Protection Policy</a>
+            </label>
+        </div>
+
+        <input type="submit" id="formRequestPopButtonSubmit" class="button button_big" value="Request MetaTrader 5 access for brokers">
+    </div>
+</div>
+
+
+<div id="formRequestPopbrokersBuyFormSuccess" class="form-request__success">
+    <div class="form-request__icon form-request__icon_success"></div>
+
+    <div class="form-request__title form-request__title_center">Thank you! Your request has been sent</div>
+    <div class="form-request__sub-title form-request__sub-title_center">Our manager will contact you soon</div>
+    <div class="form-request__success-button" style="display: block;">
+        <span class="button button_big" id="formRequestPopbrokersBuyFormOk">OK</span>
+    </div>
+</div>
+
+<div class="form-request__begin" id="formRequestPopbrokersBuyBegin">
+    <div class="form-request__icon form-request__icon_progress"></div>
+</div>
+
+<div class="form-request__error" id="formRequestPopbrokersBuyFormError">
+    <div class="form-request__title">An error occurred</div>
+    <div class="form-request__sub-title">Please accept our apologies. The problem will be fixed soon</div>
+</div>
+
+
+</form>
+
+
+<script type="text/javascript">
+    var formRequestPopFormRequestBase = undefined;
+    mqGlobal.AddOnReady(function ()
+        {
+        formRequestPopFormRequestBase = new window.FormRequestBase();
+        formRequestPopFormRequestBase.init('formRequestPop', 'Site Broker', true, '');
+        });
+
+</script>
+
+
+</body>
+</html>
+<!-- Generated in 0.9416 ms -->
